@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FORZA: encuentra una rutina de gimnasio según tu objetivo, experiencia, días disponibles y grupo muscular.">
+  <title>FORZA — Rutinas de gimnasio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#">FORZA</a>
+    <nav>
+      <a href="#rutinas">Rutinas</a>
+      <a href="#selector">Elegir rutina</a>
+      <a href="#ejercicios">Ejercicios</a>
+    </nav>
+    <a class="header-btn" href="#selector">Empezar</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="badge">🔥 TU ENTRENAMIENTO, A TU MEDIDA</div>
+        <h1>Encuentra tu<br><span>rutina ideal.</span></h1>
+        <p>Elige grupo muscular, objetivo, experiencia y días disponibles. FORZA te muestra una rutina recomendada para empezar.</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#selector">Elegir mi rutina →</a>
+          <a class="secondary-btn" href="#rutinas">Ver rutinas</a>
+        </div>
+        <div class="mini-stats">
+          <div><strong>8+</strong><small>grupos musculares</small></div>
+          <div><strong>100+</strong><small>rutinas</small></div>
+          <div><strong>100%</strong><small>gratis</small></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="card-top"><span>FORZA</span><span>●</span></div>
+        <div class="muscle-visual">💪</div>
+        <div class="hero-card-text">
+          <span>RUTINA DESTACADA</span>
+          <h3>Upper Body · Hipertrofia</h3>
+          <p>Espalda · Pecho · Hombros · Brazos</p>
+        </div>
+        <div class="exercise-row"><span>Press banca</span><b>4 × 8-10</b></div>
+        <div class="exercise-row"><span>Remo</span><b>4 × 8-10</b></div>
+        <div class="exercise-row"><span>Press hombro</span><b>3 × 10-12</b></div>
+      </div>
+    </section>
+
+    <section class="section" id="selector">
+      <div class="section-heading">
+        <span class="eyebrow">01 · PERSONALIZA</span>
+        <h2>¿Qué quieres entrenar?</h2>
+        <p>Selecciona tus preferencias y te mostramos una rutina recomendada.</p>
+      </div>
+
+      <div class="selector-box">
+        <div class="field">
+          <label for="muscle">Grupo muscular</label>
+          <select id="muscle">
+            <option value="pecho">Pecho</option>
+            <option value="espalda">Espalda</option>
+            <option value="hombros">Hombros</option>
+            <option value="biceps">Bíceps</option>
+            <option value="triceps">Tríceps</option>
+            <option value="piernas">Piernas</option>
+            <option value="gluteos">Glúteos</option>
+            <option value="fullbody">Full Body</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="goal">Objetivo</label>
+          <select id="goal">
+            <option value="hipertrofia">Hipertrofia / ganar músculo</option>
+            <option value="fuerza">Fuerza</option>
+            <option value="definicion">Definición</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="level">Experiencia</label>
+          <select id="level">
+            <option value="principiante">Principiante</option>
+            <option value="intermedio">Intermedio</option>
+            <option value="avanzado">Avanzado</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="days">Días por semana</label>
+          <select id="days">
+            <option value="2">2 días</option>
+            <option value="3">3 días</option>
+            <option value="4" selected>4 días</option>
+            <option value="5">5 días</option>
+          </select>
+        </div>
+
+        <button class="recommend-btn" id="recommendBtn">✨ Encontrar mi rutina</button>
+      </div>
+
+      <div class="result" id="result" hidden>
+        <div class="result-head">
+          <div>
+            <span class="eyebrow">TU RECOMENDACIÓN</span>
+            <h2 id="resultTitle"></h2>
+            <p id="resultDescription"></p>
+          </div>
+          <span class="result-tag" id="resultTag"></span>
+        </div>
+        <div class="routine-grid" id="routineGrid"></div>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="rutinas">
+      <div class="section-heading light">
+        <span class="eyebrow">02 · EXPLORA</span>
+        <h2>Rutinas por grupo muscular</h2>
+        <p>Combina ejercicios diferentes entre días para que cada sesión tenga variedad.</p>
+      </div>
+      <div class="routine-cards">
+        <article class="routine-card"><span>01</span><div class="icon">🦾</div><h3>Pecho</h3><p>Press banca, inclinado, aperturas y fondos.</p><a href="#selector" data-muscle="pecho">Ver rutina →</a></article>
+        <article class="routine-card"><span>02</span><div class="icon">🔙</div><h3>Espalda</h3><p>Dominadas, jalones, remos y trabajo de dorsales.</p><a href="#selector" data-muscle="espalda">Ver rutina →</a></article>
+        <article class="routine-card"><span>03</span><div class="icon">🏋️</div><h3>Hombros</h3><p>Press, elevaciones laterales y deltoides posterior.</p><a href="#selector" data-muscle="hombros">Ver rutina →</a></article>
+        <article class="routine-card"><span>04</span><div class="icon">💪</div><h3>Brazos</h3><p>Combinaciones de bíceps y tríceps para tus sesiones.</p><a href="#selector" data-muscle="biceps">Ver rutina →</a></article>
+        <article class="routine-card"><span>05</span><div class="icon">🦵</div><h3>Piernas</h3><p>Cuádriceps, femorales, glúteos y gemelos.</p><a href="#selector" data-muscle="piernas">Ver rutina →</a></article>
+        <article class="routine-card"><span>06</span><div class="icon">⚡</div><h3>Full Body</h3><p>Sesiones completas para trabajar todo el cuerpo.</p><a href="#selector" data-muscle="fullbody">Ver rutina →</a></article>
+      </div>
+    </section>
+
+    <section class="section" id="ejercicios">
+      <div class="section-heading">
+        <span class="eyebrow">03 · MÉTODO</span>
+        <h2>Entrena con cabeza.</h2>
+        <p>Una buena rutina combina selección de ejercicios, volumen, técnica y recuperación.</p>
+      </div>
+      <div class="method-grid">
+        <div><strong>01</strong><h3>Elige tu objetivo</h3><p>Define si buscas principalmente músculo, fuerza o mejorar tu composición corporal.</p></div>
+        <div><strong>02</strong><h3>Progresa poco a poco</h3><p>Registra tus entrenamientos e intenta progresar en repeticiones o carga cuando tu técnica sea sólida.</p></div>
+        <div><strong>03</strong><h3>Recupérate</h3><p>El descanso y la alimentación forman parte del entrenamiento.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-logo">FORZA</div>
+    <p>Rutinas de gimnasio simples y personalizables.</p>
+    <div class="footer-links">
+      <a href="#">Privacidad</a><a href="#">Cookies</a><a href="#">Aviso legal</a><a href="#">Contacto</a>
+    </div>
+    <small>© 2026 FORZA. Información general de entrenamiento.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
